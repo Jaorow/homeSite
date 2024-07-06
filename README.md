@@ -2,9 +2,19 @@
 - for easer dev use micro 
 
 
-## View logs of auto startup:
-sudo systemctl status startup_site_script.service
+## raspi hosting
+check with
+- sudo systemctl status startup_site_script.service
 
+restart service
+- sudo systemctl stop startup_site_script.service
+- sudo systemctl start startup_site_script.service
+
+
+# control light on board:
+### (Optional) Turn on (1) or off (0) the PWR LED.
+echo 1 | sudo tee /sys/class/leds/led1/brightness
+echo 0 | sudo tee /sys/class/leds/led1/brightness
 
 # layout
 							ribbon
