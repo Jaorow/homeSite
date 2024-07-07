@@ -6,7 +6,7 @@ cd /home/jamie/site
 
 source venv/bin/activate
 
-
+python3 temp.py &
 python3 main.py
 
 #prod

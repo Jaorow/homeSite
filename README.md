@@ -3,12 +3,11 @@
 
 
 ## raspi hosting
-check with
-- sudo systemctl status startup_site_script.service
+sudo systemctl status startup_site_script.service
 
-restart service
-- sudo systemctl stop startup_site_script.service
-- sudo systemctl start startup_site_script.service
+### restart service
+sudo systemctl stop startup_site_script.service
+sudo systemctl start startup_site_script.service
 
 
 # control light on board:

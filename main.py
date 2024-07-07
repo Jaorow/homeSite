@@ -1,6 +1,5 @@
-from flask import Flask
-
-
+from flask import Flask, send_file
+import io
 
 app = Flask(__name__)
 
@@ -12,7 +11,6 @@ def hello():
 def get_all_temps():
     with open('outputs/temps.csv', 'r') as f:
         output = f.read().splitlines()
-
     return output
 
 
