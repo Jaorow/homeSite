@@ -17,9 +17,10 @@ def log(msg):
 
 
 def run():
-    device = adafruit_dht.DHT11(board.D17)
     max_retries = 10
     retries = 0
+
+    device = adafruit_dht.DHT11(board.D17)
 
     while retries < max_retries:
         try:
@@ -59,7 +60,12 @@ def schedule(interval:int=600, save:bool=True):
 
     try:
         while True:
+            # try:
             temp,humid = run()
+            # except Exception as e:
+            #     log(e)
+            #     temp = 'ERROR'
+            #     humid = 'ERROR'
 
             if save:
                 with open('outputs/temps.csv', 'a') as f:
@@ -71,4 +77,5 @@ def schedule(interval:int=600, save:bool=True):
         log(e)
 
 if __name__ == "__main__":
-    schedule(2,True)
+    while True:
+        schedule(5,True)
